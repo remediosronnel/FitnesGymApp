@@ -1,10 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="30dp"
+        android:clickable="true"
+        android:src="@drawable/img_male"
+        app:circularflow_angles="15"
+        app:layout_constraintEnd_toStartOf="@+id/image2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="30dp"
+        android:clickable="true"
+        android:src="@drawable/img_female"
+        app:circularflow_angles="15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/image1"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <RadioGroup
+        android:id="@+id/group_radio"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image1">
 
-</LinearLayout>
+        <RadioButton
+            android:id="@+id/radio_male"
+            android:layout_width="100dp"
+            android:layout_marginLeft="30dp"
+            android:layout_height="wrap_content"
+            android:text="MALE" />
+
+        <RadioButton
+            android:id="@+id/radio_female"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="FEMALE" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/button_next1"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="142dp"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_radio" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
